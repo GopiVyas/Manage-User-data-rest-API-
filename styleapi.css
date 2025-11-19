@@ -1,0 +1,163 @@
+/* Background */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+}
+
+/* Header Title */
+h1 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 46px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #6ee7b7, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Container */
+.container {
+    width: 65%;
+    margin: 80px auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Sub Headings */
+h2 {
+    font-size: 24px;
+    color: #93c5fd;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Input Fields */
+input {
+    width: 260px;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+input:focus {
+    border-color: #60a5fa;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* Main Buttons (Add User) */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    margin: 8px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.6);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 14px;
+    color: #bfdbfe;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.09);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.17);
+    transition: 0.3s;
+}
+
+/* ICON BUTTONS */
+.icon-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    transition: 0.3s;
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.15);
+}
+
+/* Edit (Pencil) Button */
+.icon-btn.edit {
+    background: rgba(96, 165, 250, 0.25);
+    box-shadow: 0 3px 10px rgba(96, 165, 250, 0.4);
+}
+
+.icon-btn.edit:hover {
+    transform: translateY(-3px);
+    background: rgba(59, 130, 246, 0.7);
+}
+
+/* Delete (Trash) Button */
+.icon-btn.delete {
+    background: rgba(239, 68, 68, 0.25);
+    box-shadow: 0 3px 10px rgba(239, 68, 68, 0.4);
+}
+
+.icon-btn.delete:hover {
+    transform: translateY(-3px);
+    background: rgba(220, 38, 38, 0.7);
+}
+
+/* When clicked */
+.icon-btn:active {
+    transform: scale(0.92);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

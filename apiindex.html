@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="/static/styleapi.css">
+</head>
+<body>
+
+<h1>User Management System</h1>
+
+<div class="container">
+
+    <h2>Add New User</h2>
+    <input id="id" placeholder="ID">
+    <input id="name" placeholder="Name">
+    <input id="email" placeholder="Email">
+    <button onclick="addUser()">Add User</button>
+
+    <h2>Users List</h2>
+  <table>
+    <tr>
+        <th>ID</th><th>Name</th><th>Email</th><th>Actions</th>
+    </tr>
+    {% for u in users %}
+    <tr>
+        <td>{{ u['id'] }}</td>
+        <td>{{ u['name'] }}</td>
+        <td>{{ u['email'] }}</td>
+        <td>
+            <button onclick="deleteUser({{ u['id'] }})">Delete</button>
+            <button onclick="updateUser({{ u['id'] }})">Update</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+</div>
+
+
+<script>
+function addUser() {
+    fetch("/users", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            id: Number(document.getElementById("id").value),
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value
+        })
+    })
+    .then(() => location.reload());
+}
+
+function deleteUser(id) {
+    fetch("/users/" + id, { method: "DELETE" })
+        .then(() => location.reload());
+}
+
+function updateUser(id) {
+    let name = prompt("Enter new name:");
+    let email = prompt("Enter new email:");
+
+    fetch("/users/" + id, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name, email: email })
+    })
+    .then(() => location.reload());
+}
+</script>
+
+</body>
+</html>
